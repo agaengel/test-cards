@@ -17,6 +17,7 @@
       <div class="flex flex-col md:flex mb-4 text-xl">
         {{ item.node.excerpt }}
       </div>
+      <deploy-button :url="item.node.git_url" :title="item.node.title" />
       <div class="flex flex-col md:flex mb-4 text-sm">
         <div>{{ item.node.author.name }}</div>
         <div class="hidden md:block px-2"></div>
@@ -36,8 +37,10 @@
 </template>
 
 <script>
+import DeployButton from "@/components/DeployButton";
 export default {
   name: 'SampleCard',
+  components: {DeployButton},
   props: {
     item: {
       type: Object,

@@ -42,6 +42,7 @@ query {
         title
         excerpt
         path
+        git_url
         image(height: 300, width: 423, fit: cover)
         humanTime: created(format: "Do MMMM YYYY")
         datetime: created(format: "ddd MMM DD YYYY hh:mm:ss zZ")
