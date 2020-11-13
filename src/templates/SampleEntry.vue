@@ -4,32 +4,7 @@
       <div class="grid md:grid-cols-2 gap-4 h-auto">
         <div class="grid place-items-center row-span-2">
           <!-- button ship to ionos-->
-          <div>
-            <a
-              :href="
-                'https://buildwith.ionos.com/setup?repo=' + $page.sample.git_url
-              "
-              rel="noopener"
-              target="_blank"
-            >
-              <button
-                class="text-white font-bold rounded-full bg-blue-600 inline-flex items-center shadow-lg focus:outline-none px-8 my-6 py-4"
-              >
-                <svg
-                  class="fill-current text-white w-4 h-4 mr-2"
-                  role="img"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <use
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/icons.svg#icon-ship"
-                  />
-                </svg>
-                <span>Ship {{ $page.sample.title }} to IONOS</span>
-              </button>
-            </a>
-          </div>
+         <deploy-button :url="$page.sample.git_url" :title="$page.sample.title" />
           <!-- header image -->
           <div class="md:flex items-center">
             <figure class="pb-8 md:pb-16">
@@ -145,6 +120,7 @@ query($id: ID!) {
 
 <script>
 import BuildConfig from '../components/BuildConfig.vue'
+import DeployButton from "@/components/DeployButton";
 
 export default {
   metaInfo() {
@@ -153,6 +129,7 @@ export default {
     }
   },
   components: {
+    DeployButton,
     BuildConfig,
   },
 }
